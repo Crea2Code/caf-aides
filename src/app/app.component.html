@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<main class="container">
+  <app-card title="Bienvenue 👋" description="Voici votre première carte Angular.">
+    <p>Ceci est un contenu inséré avec <ng-content></ng-content></p>
+    
+  </app-card>
+  <app-button 
+    label="Simuler mes aides"
+    variant="primary"
+    (clicked)="onSimulate()">
+  </app-button>
+
+  <router-outlet></router-outlet>
+</main>
+
+<app-footer></app-footer>
