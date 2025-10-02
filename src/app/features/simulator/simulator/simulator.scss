@@ -1,0 +1,39 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 1rem;
+}
+.field {
+  display: flex; flex-direction: column; gap: .35rem;
+}
+.field input {
+  padding: .6rem .7rem;
+  border: 1px solid #ddd;
+  border-radius: .5rem;
+}
+.field small { color: #c62828; }
+.actions {
+  grid-column: 1 / -1;
+  display: flex; gap: .75rem; margin-top: .5rem;
+}
+.result {
+  margin-top: 1rem;
+  background: #f8fafc;
+  border: 1px solid #e6eef8;
+  padding: 1rem; border-radius: .75rem;
+}
+.disclaimer { color:#667; font-size: .9rem; }
+.notice {
+  position: relative;
+  margin-bottom: 1rem;
+  padding: .7rem .9rem;
+  border: 1px solid #b7ebc6;
+  background: #f6ffed;
+  color: #1c522b;
+  border-radius: .5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,.04);
+}
+.close {
+    position: absolute; right: .6rem; top: .3rem;
+    border: 0; background: transparent; font-size: 1.1rem; cursor: pointer;
+  }

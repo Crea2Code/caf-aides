@@ -1,0 +1,58 @@
+
+<div
+  *ngIf="restored()"
+  class="notice"
+  role="status"
+  aria-live="polite">
+  ✅ Simulation précédente restaurée
+  <button type="button" class="close" (click)="restored.set(false)" aria-label="Fermer la notification">×</button>
+</div>
+
+<app-card title="Simulateur d'aides" description="Estimez un montant indicatif en 30 secondes.">
+  <form [formGroup]="form" (ngSubmit)="submit()" class="grid">
+    <div class="field">
+      <label>Nombre d’adultes *</label>
+      <input type="number" formControlName="adults" min="1" max="6" />
+      <small *ngIf="hasError('adults','required')">Champ requis</small>
+      <small *ngIf="hasError('adults','min')">Minimum 1</small>
+      <small *ngIf="hasError('adults','max')">Maximum 6</small>
+    </div>
+
+    <div class="field">
+      <label>Enfants / personnes à charge *</label>
+      <input type="number" formControlName="dependents" min="0" max="10" />
+      <small *ngIf="hasError('dependents','required')">Champ requis</small>
+    </div>
+
+    <div class="field">
+      <label>Revenus nets mensuels (€) *</label>
+      <input type="number" formControlName="monthlyIncome" min="0" max="10000" />
+      <small *ngIf="hasError('monthlyIncome','required')">Champ requis</small>
+    </div>
+
+    <div class="field">
+      <label>Loyer mensuel (€) *</label>
+      <input type="number" formControlName="rent" min="0" max="3000" />
+      <small *ngIf="hasError('rent','required')">Champ requis</small>
+    </div>
+
+    <div class="field">
+      <label>Ville</label>
+      <input type="text" formControlName="city" placeholder="Ex: Caen" />
+    </div>
+
+    <div class="actions">
+      <app-button label="Calculer" variant="primary" type="submit"></app-button>
+      <app-button label="Réinitialiser" variant="secondary" (clicked)="reset()"></app-button>
+      <app-button label="Effacer les données sauvegardées" variant="danger" (clicked)="clearSavedData()">
+</app-button>
+
+    </div>
+  </form>
+
+  <div class="result" *ngIf="result() !== null">
+    <h3>Résultat</h3>
+    <p>Montant indicatif : <strong>{{ result() }} € / mois</strong></p>
+    <p class="disclaimer">Simulation pédagogique — non contractuelle.</p>
+  </div>
+</app-card>
