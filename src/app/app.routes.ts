@@ -7,5 +7,10 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/dashboard/dashboard/dashboard').then(m => m.DashboardComponent)
   },
+  {
+    path: 'simulateur',
+    loadComponent: () =>
+      import('./features/simulator/simulator/simulator').then(m => m.SimulatorComponent)
+  },
   { path: '**', redirectTo: 'dashboard' }
 ];
