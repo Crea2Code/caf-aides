@@ -34,16 +34,25 @@ Ce projet est développé dans un contexte d'apprentissage professionnel en envi
 
 ## 📁 Structure du projet
 
+## 📁 Arborescence du projet
+
+```plaintext
 src/
 ├─ app/
-│ ├─ app.component.ts
-│ ├─ app.routes.ts
-│ ├─ app.config.ts
-│ ├─ shared/components/ # Header, Footer, Button, Card
-│ └─ features/
-│ ├─ dashboard/ # Page principale
-│ └─ simulator/ # (à venir)
-└─ assets/
+│  ├─ app.component.ts           # Composant racine
+│  ├─ app.routes.ts              # Définition des routes
+│  ├─ app.config.ts              # Configuration globale de l'application
+│  ├─ shared/
+│  │  └─ components/             # Composants réutilisables
+│  │     ├─ header/              # En-tête global
+│  │     ├─ footer/              # Pied de page
+│  │     ├─ button/              # Bouton générique
+│  │     └─ card/                # Carte d'information
+│  └─ features/                  # Pages et fonctionnalités principales
+│     ├─ dashboard/              # Page principale (accueil)
+│     └─ simulator/              # (à venir) Simulateur de droits
+└─ assets/                       # Images, styles, données statiques
+
 
 
 ---
