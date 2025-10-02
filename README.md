@@ -1,61 +1,124 @@
+# 🏛️ CAF Aides – Plateforme d’aide sociale (Demo App)
+
 ![CI](https://github.com/Crea2Code/caf-aides/actions/workflows/ci.yml/badge.svg)
 
-# CafAides
+Une application Angular moderne conçue pour simuler les aides sociales de la CAF et centraliser les démarches des usagers.  
+Ce projet est développé dans un contexte d'apprentissage professionnel en environnement **front-end moderne (Angular)**, avec une architecture **micro-frontends ready**, CI/CD automatisée, et un design modulaire orienté composants standalone.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
+---
 
-## Development server
+## 🚀 Objectifs du projet
 
-To start a local development server, run:
+- 💻 Créer une interface moderne pour consulter les aides disponibles  
+- 🧮 Développer un simulateur de droits basé sur des données fictives  
+- 📂 Gérer les dossiers et rendez-vous des utilisateurs  
+- 🛠️ Mettre en œuvre de bonnes pratiques pro : **CI/CD**, **Clean Git Workflow**, **routing**, **components réutilisables**  
+- 🧑‍💻 Démontrer mes compétences front-end dans un projet structuré
 
+---
+
+## 🛠️ Stack technique
+
+| Technologie | Rôle |
+|------------|------|
+| **Angular 17+** | Framework front-end |
+| **TypeScript** | Langage principal |
+| **SCSS** | Styles modulaires |
+| **Standalone Components** | Architecture moderne sans NgModule |
+| **Angular Router** | Gestion des routes |
+| **Reactive Forms** *(à venir)* | Gestion des formulaires |
+| **GitHub Actions** | CI/CD automatisée |
+| **Zone.js / SSR Ready** | Compatibilité serveur et navigateur |
+
+---
+
+## 📁 Structure du projet
+
+src/
+├─ app/
+│ ├─ app.component.ts
+│ ├─ app.routes.ts
+│ ├─ app.config.ts
+│ ├─ shared/components/ # Header, Footer, Button, Card
+│ └─ features/
+│ ├─ dashboard/ # Page principale
+│ └─ simulator/ # (à venir)
+└─ assets/
+
+
+---
+
+## 🧭 Fonctionnalités actuelles
+
+✅ **Dashboard**  
+- Page d’accueil avec navigation centrale  
+- Composants réutilisables : `Header`, `Footer`, `Card`, `Button`  
+
+✅ **CI/CD**  
+- Pipeline GitHub Actions : lint + build automatique à chaque push/PR  
+- Badge de statut visible dans ce README
+
+📦 **À venir**  
+- 🧮 Simulateur de droits CAF  
+- 📁 Gestion des dossiers utilisateurs  
+- 📅 Module de prise de rendez-vous  
+- 🧑‍💻 Authentification et espace personnel
+
+---
+
+## ⚙️ Installation & exécution
+
+### 1. Cloner le projet
 ```bash
-ng serve
-```
+git clone https://github.com/Crea2Code/caf-aides.git
+cd caf-aides
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+2. Installer les dépendances
+npm install
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+3. Lancer en mode développement
+ng serve -o
 
-```bash
-ng generate component component-name
-```
+📍 L’application sera disponible sur http://localhost:4200
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+🧪 Scripts utiles
 
-```bash
-ng generate --help
-```
+| Commande              | Description                |
+| --------------------- | -------------------------- |
+| `npm run lint`        | Analyse du code            |
+| `npm run build`       | Build production           |
+| `ng serve`            | Lancer en développement    |
+| `ng test` *(à venir)* | Lancer les tests unitaires |
 
-## Building
+📈 Workflow Git Pro
 
-To build the project run:
+Créer une branche : git checkout -b feature/nom-feature
 
-```bash
-ng build
-```
+Commiter régulièrement avec Conventional Commits
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Ouvrir une Pull Request vers main
 
-## Running unit tests
+Laisser passer la CI ✅
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Merger après validation
 
-```bash
-ng test
-```
+🧑‍💻 Auteur
 
-## Running end-to-end tests
+👩‍💻 Sonia Chalal
+Développeuse Front-End en reconversion / évolution vers le Full Stack.
+Passionnée par les technologies web modernes, l’automatisation et la création de solutions utiles à impact social.
 
-For end-to-end (e2e) testing, run:
+🔗 LinkedIn
+https://www.linkedin.com/in/sonia-chalal-46a16b1bb/
 
-```bash
-ng e2e
-```
+🔗 site web
+https://crea2code.fr/
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+📜 Licence
 
-## Additional Resources
+Ce projet est diffusé à titre éducatif et démonstratif dans le cadre d’un apprentissage professionnel.
+Libre d’être consulté, forké ou utilisé comme référence.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+---
