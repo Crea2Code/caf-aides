@@ -1,3 +1,5 @@
+![CI](https://github.com/Crea2Code/caf-aides/actions/workflows/ci.yml/badge.svg)
+
 # CafAides
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
