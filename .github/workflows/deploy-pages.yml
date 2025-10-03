@@ -27,7 +27,8 @@ jobs:
         run: npm ci
 
       - name: Build (prod) with base-href for GH Pages
-        run: npm run build -- --configuration=production --base-href /caf-aides/
+        run: npm run build -- --configuration=production --base-href /caf-aides/ --prerender=false
+
 
       - name: List dist (diagnostic)
         run: ls -R dist || true
