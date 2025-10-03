@@ -17,16 +17,50 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm ci
-      - run: npm run build -- --configuration=production --base-href /caf-aides/
-      - run: cp dist/caf-aides/index.html dist/caf-aides/404.html
-      - uses: actions/upload-pages-artifact@v3
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build (prod) with base-href for GH Pages
+        run: npm run build -- --configuration=production --base-href /caf-aides/
+
+      - name: List dist (diagnostic)
+        run: ls -R dist || true
+
+      # 👇 Détecte automatiquement le répertoire client (SSR: */browser, sinon: */)
+      - name: Detect client dir
+        id: detect
+        shell: bash
+        run: |
+          set -e
+          CLIENT_DIR=""
+          if ls -d dist/*/browser >/dev/null 2>&1; then
+            CLIENT_DIR=$(ls -d dist/*/browser | head -n1)
+          elif ls -d dist/* >/dev/null 2>&1; then
+            CLIENT_DIR=$(ls -d dist/* | head -n1)
+          fi
+          echo "client_dir=$CLIENT_DIR" >> "$GITHUB_OUTPUT"
+          echo "Detected client dir: $CLIENT_DIR"
+
+      - name: Fail if client dir not found
+        if: ${{ steps.detect.outputs.client_dir == '' }}
+        run: |
+          echo "❌ Client directory not found under dist/."
+          exit 1
+
+      - name: Add SPA 404
+        run: |
+          cp "${{ steps.detect.outputs.client_dir }}/index.html" "${{ steps.detect.outputs.client_dir }}/404.html"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/caf-aides
+          path: ${{ steps.detect.outputs.client_dir }}
 
   deploy:
     needs: build
