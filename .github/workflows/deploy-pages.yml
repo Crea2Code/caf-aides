@@ -26,37 +26,32 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Build (prod) with base-href for GH Pages
+      # 🔒 IMPORTANT : pas de prerender pour GH Pages (routes dynamiques)
+      - name: Build (prod) with base-href for GH Pages (no prerender)
         run: npm run build -- --configuration=production --base-href /caf-aides/ --prerender=false
-
 
       - name: List dist (diagnostic)
         run: ls -R dist || true
 
-      # 👇 Détecte automatiquement le répertoire client (SSR: */browser, sinon: */)
-      - name: Detect client dir
+      # 🔎 Trouver automatiquement le dossier contenant index.html
+      - name: Detect client dir (folder that contains index.html)
         id: detect
         shell: bash
         run: |
           set -e
-          CLIENT_DIR=""
-          if ls -d dist/*/browser >/dev/null 2>&1; then
-            CLIENT_DIR=$(ls -d dist/*/browser | head -n1)
-          elif ls -d dist/* >/dev/null 2>&1; then
-            CLIENT_DIR=$(ls -d dist/* | head -n1)
-          fi
-          echo "client_dir=$CLIENT_DIR" >> "$GITHUB_OUTPUT"
+          CLIENT_DIR="$(find dist -type f -name index.html -print -quit | xargs -r dirname)"
           echo "Detected client dir: $CLIENT_DIR"
+          echo "client_dir=$CLIENT_DIR" >> "$GITHUB_OUTPUT"
 
       - name: Fail if client dir not found
         if: ${{ steps.detect.outputs.client_dir == '' }}
         run: |
-          echo "❌ Client directory not found under dist/."
+          echo "❌ Client directory not found under dist/. Check build output."
           exit 1
 
+      # 🛤️ SPA fallback : copier 404.html à côté de index.html
       - name: Add SPA 404
-        run: |
-          cp "${{ steps.detect.outputs.client_dir }}/index.html" "${{ steps.detect.outputs.client_dir }}/404.html"
+        run: cp "${{ steps.detect.outputs.client_dir }}/index.html" "${{ steps.detect.outputs.client_dir }}/404.html"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
