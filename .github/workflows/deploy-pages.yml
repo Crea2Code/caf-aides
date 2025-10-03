@@ -1,0 +1,69 @@
+name: Deploy Pages
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      # 🔒 IMPORTANT : pas de prerender pour GH Pages (routes dynamiques)
+      - name: Build (prod) with base-href for GH Pages (no prerender)
+        run: npm run build -- --configuration=production --base-href /caf-aides/ --prerender=false
+
+      - name: List dist (diagnostic)
+        run: ls -R dist || true
+
+      # 🔎 Trouver automatiquement le dossier contenant index.html
+      - name: Detect client dir (folder that contains index.html)
+        id: detect
+        shell: bash
+        run: |
+          set -e
+          CLIENT_DIR="$(find dist -type f -name index.html -print -quit | xargs -r dirname)"
+          echo "Detected client dir: $CLIENT_DIR"
+          echo "client_dir=$CLIENT_DIR" >> "$GITHUB_OUTPUT"
+
+      - name: Fail if client dir not found
+        if: ${{ steps.detect.outputs.client_dir == '' }}
+        run: |
+          echo "❌ Client directory not found under dist/. Check build output."
+          exit 1
+
+      # 🛤️ SPA fallback : copier 404.html à côté de index.html
+      - name: Add SPA 404
+        run: cp "${{ steps.detect.outputs.client_dir }}/index.html" "${{ steps.detect.outputs.client_dir }}/404.html"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.detect.outputs.client_dir }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
