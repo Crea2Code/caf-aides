@@ -12,9 +12,10 @@ export class ButtonComponent {
   @Input() label = '';
   @Input() variant: 'primary'|'secondary'|'danger' = 'primary';
   @Input() type: 'button'|'submit' = 'button';
+  @Input() disabled = false;              // 👈 ajouté
   @Output() clicked = new EventEmitter<void>();
 
   onClick() {
-    this.clicked.emit();
+    if (!this.disabled) this.clicked.emit();
   }
 }
