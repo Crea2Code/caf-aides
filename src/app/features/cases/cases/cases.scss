@@ -1,0 +1,13 @@
+.toolbar { display:flex; gap:.75rem; margin-bottom:.75rem; flex-wrap:wrap; }
+.toolbar input, .toolbar select { padding:.5rem .6rem; border:1px solid #ddd; border-radius:.5rem; }
+
+.table { display:grid; gap:.35rem; }
+.thead, .row { display:grid; grid-template-columns: 1.2fr 2.2fr 1.3fr 1.3fr 1.3fr .9fr; gap:.5rem; align-items:center; }
+.thead { font-weight:700; color:#333; }
+.row { padding:.4rem .2rem; border-bottom:1px solid #eee; }
+
+.badge { padding:.2rem .5rem; border-radius:.5rem; font-weight:600; width:max-content; }
+.badge[data-status="Ouvert"] { background:#eef2ff; color:#1e3a8a; }
+.badge[data-status="En cours"] { background:#fff7ed; color:#9a3412; }
+.badge[data-status="Complet"] { background:#ecfdf5; color:#065f46; }
+.badge[data-status="Rejeté"] { background:#fef2f2; color:#991b1b; }

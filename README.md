@@ -1,6 +1,8 @@
 # 🏛️ CAF Aides – Plateforme d’aide sociale (Demo App)
 
 ![CI](https://github.com/Crea2Code/caf-aides/actions/workflows/ci.yml/badge.svg)
+[![Live Demo](https://img.shields.io/badge/demo-online-brightgreen)](https://crea2code.github.io/caf-aides/)
+
 
 Une application Angular moderne conçue pour simuler les aides sociales de la CAF et centraliser les démarches des usagers.  
 Ce projet est développé dans un contexte d'apprentissage professionnel en environnement **front-end moderne (Angular)**, avec une architecture **micro-frontends ready**, CI/CD automatisée, et un design modulaire orienté composants standalone.
@@ -50,12 +52,34 @@ src/
 │  │     └─ card/                # Carte d'information
 │  └─ features/                  # Pages et fonctionnalités principales
 │     ├─ dashboard/              # Page principale (accueil)
-│     └─ simulator/              # (à venir) Simulateur de droits
+│     └─ simulator/              # Simulateur de droits
+      └─ /dossiers               # fonctionnelle (liste, filtres, détails)
 └─ assets/                       # Images, styles, données statiques
 
 
 
 ---
+
+## 📸 Captures d’écran
+
+<p align="center">
+  <img src="docs/screenshots/01-dashboard.png" width="800" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/02-simulateur-form.png" width="800" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/03-simulateur-resultat.png" width="800" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/04-simulateur-dernière-sauvegarde.png" width="800" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/05-dossiers-liste.png" width="800" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/06-dossier-detail.png" width="800" />
+</p>
 
 ## 🧭 Fonctionnalités actuelles
 

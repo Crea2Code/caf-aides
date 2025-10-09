@@ -12,5 +12,13 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/simulator/simulator/simulator').then(m => m.SimulatorComponent)
   },
+  {
+    path: 'dossiers',
+    loadComponent: () => import('./features/cases/cases/cases').then(m => m.CasesComponent)
+  },
+  {
+    path: 'dossiers/:id',
+    loadComponent: () => import('./features/cases/case-detail/case-detail').then(m => m.CaseDetailComponent)
+  },
   { path: '**', redirectTo: 'dashboard' }
 ];
