@@ -1,0 +1,30 @@
+<app-card title="Mes dossiers" description="Liste de vos démarches en cours et passées.">
+  <div class="toolbar">
+  <input 
+  type="search"  placeholder="Rechercher..." [ngModel]="q()" (ngModelChange)="q.set($event)" />
+    <select [ngModel]="status()" (ngModelChange)="status.set($event)">
+        <option>Tous</option>
+        <option>Ouvert</option>
+        <option>En cours</option>
+        <option>Complet</option>
+        <option>Rejeté</option>
+    </select>
+
+  </div>
+
+  <div class="table">
+    <div class="thead">
+      <div>Id</div><div>Titre</div><div>Type</div><div>Statut</div><div>Créé le</div><div></div>
+    </div>
+    <div class="row" *ngFor="let c of filtered()">
+      <div>{{ c.id }}</div>
+      <div>{{ c.titre }}</div>
+      <div>{{ c.type }}</div>
+      <div class="badge" [attr.data-status]="c.statut">{{ c.statut }}</div>
+      <div>{{ c.dateCreation | date:'dd/MM/yyyy' }}</div>
+      <div><app-button label="Voir" variant="primary" (clicked)="view(c.id)"></app-button></div>
+    </div>
+  </div>
+
+  <p *ngIf="filtered().length === 0">Aucun dossier trouvé.</p>
+</app-card>

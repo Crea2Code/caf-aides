@@ -1,0 +1,18 @@
+<ng-container *ngIf="item(); else notfound">
+  <app-card [title]="item()!.titre" [description]="'Dossier ' + item()!.id">
+    <p><strong>Type :</strong> {{ item()!.type }}</p>
+    <p><strong>Statut :</strong> {{ item()!.statut }}</p>
+    <p><strong>Demandeur :</strong> {{ item()!.demandeur }}</p>
+    <p><strong>Créé le :</strong> {{ item()!.dateCreation | date:'dd/MM/yyyy' }}</p>
+
+    <div class="actions">
+      <app-button label="Retour à la liste" variant="secondary" (clicked)="back()"></app-button>
+    </div>
+  </app-card>
+</ng-container>
+
+<ng-template #notfound>
+  <app-card title="Dossier introuvable" description="Vérifiez l'identifiant.">
+    <app-button label="Retour" variant="secondary" (clicked)="back()"></app-button>
+  </app-card>
+</ng-template>
