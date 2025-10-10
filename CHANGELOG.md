@@ -74,12 +74,29 @@ Validations avancées :
 
 🧹 Nettoyage des fichiers obsolètes (app.html, app.scss)
 
-🎯 Prochaine version (v0.4.0 – en préparation)
+---
 
-📅 Module Agenda (vue calendrier des RDV)
+## 🚀 Prochaine version – v0.4.0 (en préparation)
 
-🧭 Page À propos / Contact
+### 🎨 Améliorations UX/UI
+- Refonte légère du **design du tableau de bord** pour une meilleure lisibilité.  
+- Ajout de **messages d’erreur et de confirmation animés** (Angular animations).  
+- Uniformisation des composants `Button` et `Card` avec une palette cohérente.
 
-🎨 Amélioration du branding Caf-Aides / Crea2Code
+### 🧩 Fonctionnalités prévues
+- **Module “Contact & Assistance”** : formulaire interactif avec envoi simulé (mock API).  
+- **Extension du module “Rendez-vous”** :
+  - Sélecteur de date/heure amélioré avec calendrier visuel.
+  - Ajout d’un **filtre par canal** (téléphone / visio / agence).  
+- **Export PDF** des rendez-vous validés (prototype).
 
-🧠 Mode Admin local pour gérer les rendez-vous sauvegardés
+### ⚙️ Optimisations techniques
+- Mise à jour vers Angular **21.x (quand disponible)**.  
+- Passage à une configuration **Vite + Jest** pour les tests unitaires plus rapides.  
+- Intégration d’une **vérification de performances Lighthouse CI** sur GitHub Actions.
+
+### 📅 Objectif de livraison
+> **Fin octobre 2025** — publication de la version stable v0.4.0  
+> _(avec démo publique mise à jour sur GitHub Pages)_
+
+---
