@@ -55,13 +55,16 @@ Validations avancées :
 
 🧪 Ajout de Karma + Jasmine pour les tests unitaires
 
-✅ Tests et validation
-Test	Résultat	Description
-futureDateTimeValidator	🟢	Refuse week-ends, dates passées et horaires hors limites
-Unités (Karma/Jasmine)	🟢	Passés avec succès
-Routes /dashboard, /simulateur, /dossiers, /rdv	🟢	Vérifiées manuellement
-Déploiement GH Pages	🟢	En ligne et fonctionnel
-🧱 Architecture et maintenance
+## ✅ Tests et validation
+
+| Test                            | Résultat | Description                                                   |
+|---------------------------------|-----------|----------------------------------------------------------------|
+| `futureDateTimeValidator`       | 🟢        | Refuse week-ends, dates passées et horaires hors limites.      |
+| **Unités (Karma/Jasmine)**      | 🟢        | Tous les tests unitaires passés avec succès.                   |
+| **Routes** `/dashboard`, `/simulateur`, `/dossiers`, `/rdv` | 🟢 | Vérifiées manuellement sur l’application.                     |
+| **Déploiement GH Pages**        | 🟢        | En ligne et fonctionnel → [Voir la démo](https://crea2code.github.io/caf-aides/) |
+| **🧱 Architecture et maintenance** | 🟢 | Code refactorisé, SSR retiré, structure CSR optimisée.         |
+
 
 💡 Adoption complète des Standalone Components Angular
 
