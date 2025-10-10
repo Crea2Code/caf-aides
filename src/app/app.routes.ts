@@ -20,5 +20,10 @@ export const routes: Routes = [
     path: 'dossiers/:id',
     loadComponent: () => import('./features/cases/case-detail/case-detail').then(m => m.CaseDetailComponent)
   },
+  {
+  path: 'rdv',
+  loadComponent: () =>
+    import('./features/rdv/rdv/rdv').then(m => m.RdvComponent)
+},
   { path: '**', redirectTo: 'dashboard' }
 ];
