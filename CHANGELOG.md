@@ -1,61 +1,23 @@
-🧾 CHANGELOG — Version v0.3.0
+# 🧾 CHANGELOG – CAF-Aides
 
-Date de publication : 10 octobre 2025
-Type de release : Stable
-Démo en ligne : 🌐 https://crea2code.github.io/caf-aides/
+Historique des versions et évolutions du projet Angular `CAF-Aides`, développé par **Crea2Code**.  
+Projet open source déployé sur GitHub Pages → [Voir la démo](https://crea2code.github.io/caf-aides/)
 
-🚀 Résumé de la version
+---
 
-Cette mise à jour marque une étape importante pour Caf-Aides, avec :
+## 🟢 Version v0.3.0 – 10 octobre 2025
 
-🔧 Migration vers Angular 20.3.4
+### ✨ Nouveautés
+- Ajout du **module Rendez-vous (`/rdv`)** avec stockage local (`localStorage`) et validation de formulaires.
+- **Migration vers Angular 20.3.4** (CLI, Core) pour alignement sur les dernières versions stables.
+- Suppression complète du **SSR** et passage à une architecture **CSR optimisée**.
+- Déploiement automatisé via **GitHub Actions** → Workflow `deploy-pages.yml`.
+- Amélioration des composants partagés :
+  - `ButtonComponent` : prise en charge des états désactivés et des variantes.
+  - `CardComponent` : refonte visuelle et responsive.
+- Nettoyage du code (`app.routes.ts`, `app.component.ts`, `main.ts`) et harmonisation des modules standalone.
 
-🧩 Ajout du module Rendez-vous (RDV) complet et fonctionnel
-
-💡 Stabilisation du déploiement GitHub Pages
-
-🧱 Migration totale vers une architecture Client-Side (CSR) pour des performances accrues
-
-🧩 Nouveautés fonctionnelles
-🔹 Module Rendez-vous (/rdv)
-
-Formulaire réactif complet : nom, email, motif, date, heure, canal, commentaire, consentement
-
-Validations avancées :
-
-🚫 Week-ends interdits
-
-📅 Date et heure obligatoires
-
-⏰ Vérification des horaires ouvrés (08 h 30 – 17 h 30)
-
-🕓 Date future uniquement
-
-💾 Sauvegarde automatique des rendez-vous via localStorage
-
-❌ Suppression dynamique d’un RDV depuis la liste
-
-🎨 Design cohérent avec les composants globaux (CardComponent, ButtonComponent)
-
-🔧 Améliorations techniques
-
-✅ Mise à jour des dépendances :
-
-@angular/cli@20.3.4
-
-@angular/core@20.3.4
-
-@angular-devkit/build-angular@20.3.5
-
-🧹 Nettoyage complet du SSR (main.server.ts supprimé)
-
-⚙️ Configuration optimisée pour GitHub Pages (prerender=false, base-href=/caf-aides/)
-
-🧩 CI/CD corrigé et fiabilisé (.github/workflows/deploy-pages.yml)
-
-🧪 Ajout de Karma + Jasmine pour les tests unitaires
-
-## ✅ Tests et validation
+### ✅ Tests et validation
 
 | Test                            | Résultat | Description                                                   |
 |---------------------------------|-----------|----------------------------------------------------------------|
@@ -64,15 +26,6 @@ Validations avancées :
 | **Routes** `/dashboard`, `/simulateur`, `/dossiers`, `/rdv` | 🟢 | Vérifiées manuellement sur l’application.                     |
 | **Déploiement GH Pages**        | 🟢        | En ligne et fonctionnel → [Voir la démo](https://crea2code.github.io/caf-aides/) |
 | **🧱 Architecture et maintenance** | 🟢 | Code refactorisé, SSR retiré, structure CSR optimisée.         |
-
-
-💡 Adoption complète des Standalone Components Angular
-
-🧭 Refactorisation du routing (app.routes.ts)
-
-📁 Organisation par “features”
-
-🧹 Nettoyage des fichiers obsolètes (app.html, app.scss)
 
 ---
 
@@ -96,7 +49,12 @@ Validations avancées :
 - Intégration d’une **vérification de performances Lighthouse CI** sur GitHub Actions.
 
 ### 📅 Objectif de livraison
-> **Fin octobre 2025** — publication de la version stable v0.4.0  
+> **Fin octobre 2025** — publication de la version stable `v0.4.0`  
 > _(avec démo publique mise à jour sur GitHub Pages)_
+
+---
+
+📦 **Projet GitHub :** [Crea2Code / caf-aides](https://github.com/Crea2Code/caf-aides)  
+💻 **Démo en ligne :** [https://crea2code.github.io/caf-aides/](https://crea2code.github.io/caf-aides/)
 
 ---
