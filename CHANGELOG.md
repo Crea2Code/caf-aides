@@ -1,0 +1,82 @@
+🧾 CHANGELOG — Version v0.3.0
+
+Date de publication : 10 octobre 2025
+Type de release : Stable
+Démo en ligne : 🌐 https://crea2code.github.io/caf-aides/
+
+🚀 Résumé de la version
+
+Cette mise à jour marque une étape importante pour Caf-Aides, avec :
+
+🔧 Migration vers Angular 20.3.4
+
+🧩 Ajout du module Rendez-vous (RDV) complet et fonctionnel
+
+💡 Stabilisation du déploiement GitHub Pages
+
+🧱 Migration totale vers une architecture Client-Side (CSR) pour des performances accrues
+
+🧩 Nouveautés fonctionnelles
+🔹 Module Rendez-vous (/rdv)
+
+Formulaire réactif complet : nom, email, motif, date, heure, canal, commentaire, consentement
+
+Validations avancées :
+
+🚫 Week-ends interdits
+
+📅 Date et heure obligatoires
+
+⏰ Vérification des horaires ouvrés (08 h 30 – 17 h 30)
+
+🕓 Date future uniquement
+
+💾 Sauvegarde automatique des rendez-vous via localStorage
+
+❌ Suppression dynamique d’un RDV depuis la liste
+
+🎨 Design cohérent avec les composants globaux (CardComponent, ButtonComponent)
+
+🔧 Améliorations techniques
+
+✅ Mise à jour des dépendances :
+
+@angular/cli@20.3.4
+
+@angular/core@20.3.4
+
+@angular-devkit/build-angular@20.3.5
+
+🧹 Nettoyage complet du SSR (main.server.ts supprimé)
+
+⚙️ Configuration optimisée pour GitHub Pages (prerender=false, base-href=/caf-aides/)
+
+🧩 CI/CD corrigé et fiabilisé (.github/workflows/deploy-pages.yml)
+
+🧪 Ajout de Karma + Jasmine pour les tests unitaires
+
+✅ Tests et validation
+Test	Résultat	Description
+futureDateTimeValidator	🟢	Refuse week-ends, dates passées et horaires hors limites
+Unités (Karma/Jasmine)	🟢	Passés avec succès
+Routes /dashboard, /simulateur, /dossiers, /rdv	🟢	Vérifiées manuellement
+Déploiement GH Pages	🟢	En ligne et fonctionnel
+🧱 Architecture et maintenance
+
+💡 Adoption complète des Standalone Components Angular
+
+🧭 Refactorisation du routing (app.routes.ts)
+
+📁 Organisation par “features”
+
+🧹 Nettoyage des fichiers obsolètes (app.html, app.scss)
+
+🎯 Prochaine version (v0.4.0 – en préparation)
+
+📅 Module Agenda (vue calendrier des RDV)
+
+🧭 Page À propos / Contact
+
+🎨 Amélioration du branding Caf-Aides / Crea2Code
+
+🧠 Mode Admin local pour gérer les rendez-vous sauvegardés
