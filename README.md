@@ -38,7 +38,7 @@ Ce projet est développé dans un contexte d'apprentissage professionnel en envi
 
 ## 📁 Arborescence du projet
 
-```plaintext
+
 src/
 ├─ app/
 │  ├─ app.component.ts           # Composant racine
@@ -58,7 +58,7 @@ src/
 
 
 
----
+
 
 ## 📸 Captures d’écran
 
@@ -97,7 +97,7 @@ src/
 - 📅 Module de prise de rendez-vous  
 - 🧑‍💻 Authentification et espace personnel
 
----
+
 
 ## ⚙️ Installation & exécution
 
@@ -154,4 +154,4 @@ Ce projet est diffusé à titre éducatif et démonstratif dans le cadre d’un 
 Libre d’être consulté, forké ou utilisé comme référence.
 
 
----
+
