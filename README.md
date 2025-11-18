@@ -38,7 +38,7 @@ Ce projet est développé dans un contexte d'apprentissage professionnel en envi
 
 ## 📁 Arborescence du projet
 
-
+```bash
 src/
 ├─ app/
 │  ├─ app.component.ts           # Composant racine
@@ -55,7 +55,7 @@ src/
 │     └─ simulator/              # Simulateur de droits
       └─ /dossiers               # fonctionnelle (liste, filtres, détails)
 └─ assets/                       # Images, styles, données statiques
-
+```
 
 
 
@@ -105,17 +105,17 @@ src/
 ```bash
 git clone https://github.com/Crea2Code/caf-aides.git
 cd caf-aides
+```
 
-
-2. Installer les dépendances
+### 2. Installer les dépendances
 npm install
 
-3. Lancer en mode développement
+### 3. Lancer en mode développement
 ng serve -o
 
-📍 L’application sera disponible sur http://localhost:4200
+### 📍 L’application sera disponible sur http://localhost:4200
 
-🧪 Scripts utiles
+🧪 **Scripts utiles**
 
 | Commande              | Description                |
 | --------------------- | -------------------------- |
@@ -136,19 +136,19 @@ Laisser passer la CI ✅
 
 Merger après validation
 
-🧑‍💻 Auteur
+## 🧑‍💻 Auteur
 
-👩‍💻 Sonia Chalal
+👩‍💻 **Sonia Chalal**
 Développeuse Front-End en reconversion / évolution vers le Full Stack.
 Passionnée par les technologies web modernes, l’automatisation et la création de solutions utiles à impact social.
 
-🔗 LinkedIn
+🔗 **LinkedIn**
 https://www.linkedin.com/in/sonia-chalal-46a16b1bb/
 
-🔗 site web
+🔗 **site web**
 https://crea2code.fr/
 
-📜 Licence
+### 📜 Licence
 
 Ce projet est diffusé à titre éducatif et démonstratif dans le cadre d’un apprentissage professionnel.
 Libre d’être consulté, forké ou utilisé comme référence.
